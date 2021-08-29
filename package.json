@@ -1,0 +1,62 @@
+{
+    "name": "@torchlight-api/client",
+    "version": "0.0.1",
+    "description": "A general purpose JavaScript client for Torchlight - the syntax highlighting API",
+    "source": "*.js",
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./dist/client.esm.js",
+            "require": "./dist/client.cjs"
+        },
+        "./cli": {
+            "import": "./dist/cli.esm.js",
+            "require": "./dist/cli.cjs"
+        }
+    },
+    "scripts": {
+        "test": "standard --env jest && jest",
+        "build": "microbundle -f esm,cjs"
+    },
+    "author": "Aaron Francis <aaron@hammerstone.dev> (https://torchlight.dev)",
+    "license": "MIT",
+    "dependencies": {
+        "axios": "^0.21.1",
+        "chalk": "^4.1.2",
+        "fs-extra": "^10.0.0",
+        "lodash.chunk": "^4.2.0",
+        "lodash.get": "^4.4.2",
+        "md5": "^2.3.0"
+    },
+    "devDependencies": {
+        "@babel/preset-env": "^7.15.0",
+        "babel-jest": "^27.0.6",
+        "jest": "^27.0.6",
+        "microbundle": "^0.13.3",
+        "standard": "^16.0.3"
+    },
+    "jest": {
+        "clearMocks": true,
+        "transform": {
+            "^.+\\.[t|j]sx?$": "babel-jest"
+        }
+    },
+    "babel": {
+        "presets": [
+            [
+                "@babel/preset-env",
+                {
+                    "targets": {
+                        "node": "12.13.0"
+                    }
+                }
+            ]
+        ]
+    },
+    "standard": {
+        "ignore": [
+            "tests",
+            "dists"
+        ]
+    }
+}
