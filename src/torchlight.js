@@ -2,7 +2,7 @@ import axios from 'axios'
 import md5 from 'md5'
 import get from 'lodash.get'
 import chunk from 'lodash.chunk'
-import standardLogger from './loggers/standard'
+import { standardLogger } from './log'
 import MemoryCache from './cache/memory'
 
 /**
